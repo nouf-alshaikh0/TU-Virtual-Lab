@@ -126,9 +126,18 @@ The migrations create the schema: users, semesters, courses, sections, student s
 This repository does not include `.env` files, API keys, database passwords, the production database, or any real student data. All secrets are read from environment variables. Never commit your `.env` file.
 
 ## Screenshots
-<!-- Put images in docs/screenshots and link them here, for example:
-![Schedule](docs/screenshots/schedule.png)
--->
+
+**Instructor: sections**
+![Instructor sections](docs/screenshots/instructor-sections.jpg)
+
+**Instructor: attendance**
+![Instructor attendance](docs/screenshots/instructor-attendance.jpg)
+
+**Student: weekly schedule and live session status**
+![Student schedule](docs/screenshots/student-schedule.jpg)
+
+**Student: live session with code editor**
+![Student live session](docs/screenshots/student-live-session.jpg)
 
 ## License
 Developed as an academic graduation project. Please contact the authors before reusing, redistributing, or deploying it commercially.
