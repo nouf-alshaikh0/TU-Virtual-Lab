@@ -1,66 +1,134 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Interactive TU-Virtual Labs
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A web-based virtual programming lab for the College of Computer Science and Information Technology at Taif University. Students practice coding and join live lab sessions from anywhere, while instructors run sessions, follow each student's work, and review submissions.
 
-## About Laravel
+> Graduation project by a team of six students, supervised by Dr. Wael Y. Alghamdi.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Why this project
+The number of students in the college has grown quickly, but physical labs and devices have not (at most 20 labs across the male and female sections). That limits hands-on practice time. This platform moves part of the lab online so practice is not tied to a room or a schedule.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Objectives
+- Make faculty monitoring of practical work easier
+- Let students practice at any time
+- Reduce lab costs
+- Support remote learning
+- Strengthen instructor and student interaction
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Features
 
-## Learning Laravel
+### Live programming sessions
+- Split-screen view: the student follows the instructor's demonstration while working on their own code
+- The instructor can open any student's screen from the participant list
+- Students submit their work during the session, and a completion indicator shows the instructor who has finished
+- Real-time updates through Pusher, and video meetings through Jitsi Meet
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Practice labs and code editor
+- Built-in editor for writing and running code
+- Code is executed by the Judge0 API (through RapidAPI)
+- Submissions are stored with the platform
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### For students
+- Dashboard, enrolled courses and sections, schedules
+- Practice labs and live sessions
+- Submissions and attendance
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### For instructors and admins
+- Dashboard, section and schedule management
+- Run and monitor live sessions
+- Review submissions and attendance
+- Excel import and export (users, sections, schedules, attendance, marks)
 
-## Laravel Sponsors
+## User provisioning
+There is no public sign-up. Accounts are created by an administrator through an Excel import, which fits a university setting where student records already exist elsewhere. Passwords are hashed before they are stored.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+## Tech stack
+| Layer | Technology |
+| --- | --- |
+| Backend | PHP, Laravel |
+| Frontend | Blade, HTML, CSS, JavaScript, Vite |
+| Database | MySQL |
+| Real time | Pusher |
+| Code execution | Judge0 API |
+| Video | Jitsi Meet |
+| Data import/export | Laravel Excel |
+| Methodology | Agile |
 
-### Premium Partners
+## My contribution
+- Designed the UI/UX of the platform's interfaces
+- Built the login and authentication pages
+- Worked on the MySQL database design (schema, table relationships, queries)
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+## Published research
+A paper based on this project was published in *Procedia Computer Science* (Elsevier, ScienceDirect):
+[Read the paper](https://linkinghub.elsevier.com/retrieve/pii/S1877050924033313)
 
-## Contributing
+## Team
+Developed by a team of six students at the College of Computer Science and Information Technology, Taif University, under the supervision of Dr. Wael Y. Alghamdi.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Project structure
+```
+app/         Controllers, models, imports, exports, services
+database/    Migrations, factories, seeders
+resources/   Blade views, CSS, JavaScript
+routes/      web.php, api.php, channels.php
+public/      Entry point and static assets
+```
 
-## Code of Conduct
+## Database
+The migrations create the schema: users, semesters, courses, sections, student sections, schedules, weeks, submissions, and attendances.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Getting started
 
-## Security Vulnerabilities
+**Requirements:** PHP 8.2+, Composer, MySQL (for example via XAMPP), Node.js and npm.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+1. Clone the repository
+   ```bash
+   git clone https://github.com/noufSh0/TU-Virtual-Lab.git
+   cd TU-Virtual-Lab
+   ```
+2. Install dependencies
+   ```bash
+   composer install
+   npm install
+   ```
+3. Create the environment file and app key
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
+   On Windows: `copy .env.example .env`
+4. Create a MySQL database and set it in `.env`
+   ```
+   DB_DATABASE=your_database_name
+   DB_USERNAME=root
+   DB_PASSWORD=
+   ```
+5. Add your own service keys in `.env`
+   ```
+   RAPIDAPI_KEY=
+   PUSHER_APP_ID=
+   PUSHER_APP_KEY=
+   PUSHER_APP_SECRET=
+   PUSHER_APP_CLUSTER=
+   ```
+6. Create the tables and build the assets
+   ```bash
+   php artisan migrate
+   npm run build
+   ```
+7. Start the server
+   ```bash
+   php artisan serve
+   ```
+   Then open http://127.0.0.1:8000
+
+## Security and data privacy
+This repository does not include `.env` files, API keys, database passwords, the production database, or any real student data. All secrets are read from environment variables. Never commit your `.env` file.
+
+## Screenshots
+<!-- Put images in docs/screenshots and link them here, for example:
+![Schedule](docs/screenshots/schedule.png)
+-->
 
 ## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Developed as an academic graduation project. Please contact the authors before reusing, redistributing, or deploying it commercially.
