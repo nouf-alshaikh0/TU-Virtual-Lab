@@ -83,7 +83,7 @@ The migrations create the schema: users, semesters, courses, sections, student s
 
 1. Clone the repository
    ```bash
-   git clone https://github.com/noufSh0/TU-Virtual-Lab.git
+   git clone https://github.com/nouf-alshaikh0/TU-Virtual-Lab.git
    cd TU-Virtual-Lab
    ```
 2. Install dependencies
@@ -140,4 +140,4 @@ This repository does not include `.env` files, API keys, database passwords, the
 ![Student live session](docs/screenshots/student-live-session.jpg)
 
 ## License
-Developed as an academic graduation project. Please contact the authors before reusing, redistributing, or deploying it commercially.
+Developed as an academic graduation project. Please contact the authors before reusing, redistributing, or deploying it commercially
